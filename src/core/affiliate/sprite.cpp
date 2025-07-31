@@ -13,14 +13,11 @@ Sprite *Sprite::addSpriteChild(ObjectScreen *parent, const std::string &file_pat
 
 void Sprite::render()
 {
-    if (texture_.texture == nullptr)
+    if (!texture_.texture || !parent_ || is_finsh_)
     {
         return;
     }
-    if (parent_ == nullptr)
-    {
-        return;
-    }
+
     auto pos = parent_->getRenderPosition() + offset_;
     game_.renderTexture(texture_, pos, size_);
 }

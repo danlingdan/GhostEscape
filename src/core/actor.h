@@ -8,6 +8,8 @@ protected:
     float max_speed_ = 100.0f;
 
 public:
+    virtual void move(float dt);
+
     // getter and setter
     auto getVelocity() const { return velocity_; }
     auto getMaxSpeed() const { return max_speed_; }

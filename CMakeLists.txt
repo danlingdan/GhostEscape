@@ -28,6 +28,7 @@ add_executable(${TARGET}
     src/core/object_world.cpp
     src/core/scene.cpp
     src/core/object.cpp
+    src/core/actor.cpp
     src/core/asset_store.cpp
     src/core/object_affiliate.cpp
     src/core/game.cpp

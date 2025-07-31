@@ -22,18 +22,43 @@ void Scene::handleEvents(SDL_Event &event)
 void Scene::update(float dt)
 {
     Object::update(dt);
-    for (auto &child : children_world_)
+
+    for (auto it = children_world_.begin(); it != children_world_.end();)
     {
-        if (child->getActive())
+        auto child = *it;
+        if (child->getNeedRemove())
         {
-            child->update(dt);
+            it = children_world_.erase(it);
+            child->clean();
+            delete child;
+            // SDL_Log("DEL!\n");
+        }
+        else
+        {
+            if (child->getActive())
+            {
+                child->update(dt);
+            }
+            ++it;
         }
     }
-    for (auto &child : children__screen_)
+
+    for (auto it = children__screen_.begin(); it != children__screen_.end();)
     {
-        if (child->getActive())
+        auto child = *it;
+        if (child->getNeedRemove())
         {
-            child->update(dt);
+            it = children__screen_.erase(it);
+            child->clean();
+            delete child;
+        }
+        else
+        {
+            if (child->getActive())
+            {
+                child->update(dt);
+            }
+            ++it;
         }
     }
 }

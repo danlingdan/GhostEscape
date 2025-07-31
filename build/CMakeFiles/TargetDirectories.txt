@@ -1,3 +1,0 @@
-/home/hua/Desktop/GhostEscape/build/CMakeFiles/GhostEscape-Linux.dir
-/home/hua/Desktop/GhostEscape/build/CMakeFiles/edit_cache.dir
-/home/hua/Desktop/GhostEscape/build/CMakeFiles/rebuild_cache.dir

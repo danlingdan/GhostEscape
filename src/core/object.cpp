@@ -13,11 +13,22 @@ void Object::handleEvents(SDL_Event &event)
 
 void Object::update(float dt)
 {
-    for (auto &child : children_)
+    for (auto it = children_.begin(); it != children_.end();)
     {
-        if (child->getActive())
+        auto child = *it;
+        if (child->getNeedRemove())
         {
-            child->update(dt);
+            it = children_.erase(it);
+            child->clean();
+            delete child;
+        }
+        else
+        {
+            if (child->getActive())
+            {
+                child->update(dt);
+            }
+            ++it;
         }
     }
 }
