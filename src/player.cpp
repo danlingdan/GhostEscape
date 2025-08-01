@@ -1,6 +1,7 @@
 #include "player.h"
 #include "core/affiliate/sprite_anim.h"
 #include "core/affiliate/coilder.h"
+#include "raw/stats.h"
 
 void Player::init()
 {
@@ -11,6 +12,7 @@ void Player::init()
     sprite_move_->setActive(false);
 
     coilder_ = Coilder::addCoilderChild(this, sprite_idle_->getSize() / 2.0f);
+    stats_ = Stats::addStatsChild(this);
 }
 
 void Player::handleEvents(SDL_Event &event)
@@ -26,6 +28,7 @@ void Player::update(float dt)
     checkStates();
     move(dt);
     syncCamera();
+    isAlive();
 }
 
 void Player::render()

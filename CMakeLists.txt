@@ -24,6 +24,7 @@ find_package(SDL3_ttf REQUIRED)
 find_package(glm REQUIRED)
 
 add_executable(${TARGET}
+    src/raw/stats.cpp
     src/core/affiliate/sprite.cpp
     src/core/affiliate/sprite_anim.cpp
     src/core/affiliate/coilder.cpp

@@ -1,5 +1,6 @@
 #include "enemy.h"
 #include "core/affiliate/sprite_anim.h"
+#include "raw/stats.h"
 
 void Enemy::init()
 {
@@ -13,6 +14,7 @@ void Enemy::init()
 
     current_anim_ = anim_normal_;
     coilder_ = Coilder::addCoilderChild(this, anim_normal_->getSize());
+    stats_ = Stats::addStatsChild(this);
 }
 
 void Enemy::update(float dt)
@@ -80,6 +82,10 @@ void Enemy::attack()
 
     if (coilder_->isCoilding(target_->getCoilder()))
     {
+        if (stats_ && target_->getStats())
+        {
+            target_->takeDamage(stats_->getDamage());
+        }
         // SDL_Log("Coilder!");
     }
 }
