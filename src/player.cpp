@@ -10,7 +10,7 @@ void Player::init()
     sprite_move_ = SpriteAnim::addSpriteAnimChild(this, "assets/sprite/ghost-move.png", 2.0);
     sprite_move_->setActive(false);
 
-    coilder_ = Coilder::addCoilderChild(this, sprite_idle_->getSize());
+    coilder_ = Coilder::addCoilderChild(this, sprite_idle_->getSize() / 2.0f);
 }
 
 void Player::handleEvents(SDL_Event &event)

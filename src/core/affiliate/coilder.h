@@ -16,7 +16,7 @@ public:
 
     bool isCoilding(Coilder *other);
 
-    static Coilder *addCoilderChild(ObjectScreen *parent, glm::vec2 size, Type type = Type::CIRCLE);
+    static Coilder *addCoilderChild(ObjectScreen *parent, glm::vec2 size, Type type = Type::CIRCLE, Anchor anchor = Anchor::NONE);
 
     // getter and setter
     auto getType() const { return type_; }

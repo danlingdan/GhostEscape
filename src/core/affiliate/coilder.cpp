@@ -23,7 +23,7 @@ bool Coilder::isCoilding(Coilder *other)
     return false;
 }
 
-Coilder *Coilder::addCoilderChild(ObjectScreen *parent, glm::vec2 size, Type type)
+Coilder *Coilder::addCoilderChild(ObjectScreen *parent, glm::vec2 size, Type type, Anchor anchor)
 {
     auto coilder = new Coilder();
     coilder->init();

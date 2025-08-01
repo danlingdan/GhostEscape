@@ -26,7 +26,7 @@ void SpriteAnim::update(float dt)
     texture_.src_rect.x = texture_.src_rect.w * current_frame_;
 }
 
-SpriteAnim *SpriteAnim::addSpriteAnimChild(ObjectScreen *parent, const std::string &file_path, float scale)
+SpriteAnim *SpriteAnim::addSpriteAnimChild(ObjectScreen *parent, const std::string &file_path, float scale, Anchor anchor)
 {
     auto speite_anim = new SpriteAnim();
     speite_anim->init();

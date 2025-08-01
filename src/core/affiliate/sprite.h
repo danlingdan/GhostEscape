@@ -23,11 +23,9 @@ protected:
 public:
     Sprite() = default;
 
-    static Sprite *addSpriteChild(ObjectScreen *parent, const std::string &file_path, float scale = 1.0f);
+    static Sprite *addSpriteChild(ObjectScreen *parent, const std::string &file_path, float scale = 1.0f, Anchor anchor = Anchor::NONE);
 
     virtual void render() override;
-
-    void setScale(float scale) { size_ *= scale; }
 
     // getter and setter
     auto getTexture() const { return texture_; }

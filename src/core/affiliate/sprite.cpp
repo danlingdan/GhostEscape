@@ -1,6 +1,6 @@
 #include "sprite.h"
 
-Sprite *Sprite::addSpriteChild(ObjectScreen *parent, const std::string &file_path, float scale)
+Sprite *Sprite::addSpriteChild(ObjectScreen *parent, const std::string &file_path, float scale, Anchor anchor)
 {
     auto speite = new Sprite();
     speite->init();

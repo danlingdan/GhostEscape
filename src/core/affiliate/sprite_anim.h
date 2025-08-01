@@ -11,7 +11,7 @@ class SpriteAnim : public Sprite
 public:
     virtual void update(float dt) override;
 
-    static SpriteAnim *addSpriteAnimChild(ObjectScreen *parent, const std::string &file_path, float scale = 1.0f);
+    static SpriteAnim *addSpriteAnimChild(ObjectScreen *parent, const std::string &file_path, float scale = 1.0f, Anchor anchor = Anchor::CENTER);
 
     // getter and settet
     auto getCurrentFrame() const { return current_frame_; }
