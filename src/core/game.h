@@ -46,6 +46,7 @@ public:
     void clean();
 
     void renderTexture(const Texture &texture, const glm::vec2 &position, const glm::vec2 &size);
+    void renderFillCircle(const glm::vec2 &position, const glm::vec2 &size, float alpha);
 
     // 工具函数
     void drawGrid(const glm::vec2 &top_left, const glm::vec2 &botton_right, float grid_width, SDL_FColor fcolor);

@@ -26,6 +26,7 @@ find_package(glm REQUIRED)
 add_executable(${TARGET}
     src/core/affiliate/sprite.cpp
     src/core/affiliate/sprite_anim.cpp
+    src/core/affiliate/coilder.cpp
     src/core/object_world.cpp
     src/core/scene.cpp
     src/core/object.cpp

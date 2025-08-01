@@ -18,8 +18,6 @@ class Enemy : public Actor
     SpriteAnim *anim_die_ = nullptr;
     SpriteAnim *current_anim_ = nullptr;
 
-    float timer_ = 0.0f;
-
 public:
     virtual void
     init() override;
@@ -31,6 +29,8 @@ public:
     void changeStates(States new_state);
 
     void remove();
+
+    void attack();
 
     // getter and setter
     auto getTarget() const { return target_; }

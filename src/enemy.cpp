@@ -12,6 +12,7 @@ void Enemy::init()
     anim_die_->setIsLoop(false);
 
     current_anim_ = anim_normal_;
+    coilder_ = Coilder::addCoilderChild(this, anim_normal_->getSize());
 }
 
 void Enemy::update(float dt)
@@ -20,17 +21,7 @@ void Enemy::update(float dt)
     aim_target(target_);
     move(dt);
 
-    timer_ += dt;
-    if (timer_ > 2.0f && timer_ < 4.0f)
-    {
-        changeStates(States::HURT);
-    }
-    else if (timer_ > 4.0f)
-    {
-        changeStates(States::DIE);
-    }
-
-    remove();
+    attack();
 }
 
 void Enemy::aim_target(Player *target)
@@ -77,5 +68,18 @@ void Enemy::remove()
     if (anim_die_->getIsFinish())
     {
         need_remove_ = true;
+    }
+}
+
+void Enemy::attack()
+{
+    if (!coilder_ || target_->getCoilder() == nullptr)
+    {
+        return;
+    }
+
+    if (coilder_->isCoilding(target_->getCoilder()))
+    {
+        // SDL_Log("Coilder!");
     }
 }

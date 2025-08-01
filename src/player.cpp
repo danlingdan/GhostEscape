@@ -1,5 +1,6 @@
 #include "player.h"
 #include "core/affiliate/sprite_anim.h"
+#include "core/affiliate/coilder.h"
 
 void Player::init()
 {
@@ -8,6 +9,8 @@ void Player::init()
     sprite_idle_ = SpriteAnim::addSpriteAnimChild(this, "assets/sprite/ghost-idle.png", 2.0);
     sprite_move_ = SpriteAnim::addSpriteAnimChild(this, "assets/sprite/ghost-move.png", 2.0);
     sprite_move_->setActive(false);
+
+    coilder_ = Coilder::addCoilderChild(this, sprite_idle_->getSize());
 }
 
 void Player::handleEvents(SDL_Event &event)
